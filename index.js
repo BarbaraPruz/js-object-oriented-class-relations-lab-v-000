@@ -30,9 +30,9 @@ class Trip {
   }
 
   passenger() {
-    store.passengers.find( passenger => passenger.id === this.passengerId);
+    return store.passengers.find( passenger => passenger.id === this.passengerId);
   }
   driver() {
-    store.drivers.find( driver => driever.id === this.driverId);
+    return store.drivers.find( driver => driver.id === this.driverId);
   }
 }
