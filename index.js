@@ -25,7 +25,21 @@ class Passenger {
   constructor (name) {
     this.name = name;
     this.id = ++passengerId;
-    store.passengers.push(this)
+    store.passengers.push(this);
+  }
+
+  trips() {
+      return store.trips.filter ( trip => trip.passengerId === this.id );
+  }
+
+  drivers() {
+    let t = this.trips();
+    console.log("Passenger",this);
+    console.log("All trips",store.trips)
+    console.log("Passengers trips",t);
+    r = t.map ( |trip| trip.driver)
+    console.log("And drivers",r);
+    return r;
   }
 }
 
