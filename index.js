@@ -17,7 +17,7 @@ class Driver {
   }
 
   passengers() {
-    return this.trips().map ( trip => trip.passenger );
+    return this.trips().map ( trip => trip.passenger() );
   }
 }
 
@@ -35,9 +35,8 @@ class Passenger {
   drivers() {
     let t = this.trips();
     console.log("Passenger",this);
-    console.log("All trips",store.trips);
     console.log("Passengers trips",t);
-    let r = t.map ( trip => trip.driver);
+    let r = t.map ( trip => trip.driver());
     console.log("And drivers",r);
     return r;
   }
